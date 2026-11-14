@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumi Keys · The AMOLED AI keyboard</title>
+<meta name="description" content="Lumi Keys is an Android AI keyboard in AMOLED black: Gboard-style typing, Sinhala and Singlish, smart clipboard, and AI tools with your own key.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23534AB7'/%3E%3Crect x='16' y='18' width='32' height='28' rx='7' fill='%23fff'/%3E%3Cpath d='M32 23l2.6 6.4L41 32l-6.4 2.6L32 41l-2.6-6.4L23 32l6.4-2.6z' fill='%23534AB7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="glow glow-a" aria-hidden="true"></div>
+<div class="glow glow-b" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+<nav id="dots" aria-label="Sections"></nav>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Lumi Keys home">
+    <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#534AB7"/><rect x="16" y="18" width="32" height="28" rx="7" fill="#fff"/><path d="M32 23l2.6 6.4L41 32l-6.4 2.6L32 41l-2.6-6.4L23 32l6.4-2.6z" fill="#534AB7"/></svg>
+    <span>Lumi Keys</span>
+  </a>
+  <nav>
+    <a href="#feel">Typing</a>
+    <a href="#sinhala">සිංහල</a>
+    <a href="#clipboard">Clipboard</a>
+    <a href="#ai">AI</a>
+    <a class="pill" href="https://github.com/damsarachethiyaa-dev/lumi-keys/releases/latest">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 1. Hero -->
+  <section class="panel hero" data-stage="0">
+    <div class="copy left">
+      <p class="eyebrow reveal">Android keyboard · AMOLED black</p>
+      <h1 class="reveal"><span class="line">Type in</span><span class="line grad">pure light.</span></h1>
+      <p class="lede reveal">Lumi Keys feels like the keyboard you already know, then goes further: keys that spring under your thumb, Sinhala the way you really type it, a clipboard that thinks ahead, and AI when you ask for it.</p>
+      <div class="cta reveal">
+        <a class="btn primary" href="https://github.com/damsarachethiyaa-dev/lumi-keys/releases/latest">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+          Download APK
+        </a>
+        <a class="btn ghost" href="#feel">See what it does</a>
+      </div>
+      <p class="fine reveal">Free · 576 KB · Android 7.0+ · no ads, no tracking</p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>Scroll</div>
+  </section>
+
+  <!-- marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Glide typing</span><i>✦</i><span>Singlish</span><i>✦</i><span>Wijesekara</span><i>✦</i><span>Smart clipboard</span><i>✦</i><span>Screenshot paste</span><i>✦</i><span>Emoji search</span><i>✦</i><span>AI rewrite</span><i>✦</i><span>Translate</span><i>✦</i><span>Key correction</span><i>✦</i><span>On-device learning</span><i>✦</i>
+      <span>Glide typing</span><i>✦</i><span>Singlish</span><i>✦</i><span>Wijesekara</span><i>✦</i><span>Smart clipboard</span><i>✦</i><span>Screenshot paste</span><i>✦</i><span>Emoji search</span><i>✦</i><span>AI rewrite</span><i>✦</i><span>Translate</span><i>✦</i><span>Key correction</span><i>✦</i><span>On-device learning</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- 2. Feel -->
+  <section class="panel" id="feel" data-stage="1">
+    <span class="bignum g-left" aria-hidden="true">01</span>
+    <div class="copy right">
+      <p class="eyebrow reveal">01 · Typing feel</p>
+      <h2 class="reveal">Every key,<br><span class="grad">alive.</span></h2>
+      <p class="lede reveal">Keys sink, glow and spring back the instant you touch them. Slide across letters to glide a word. Tap near the edge of a key and Lumi Keys still knows which letter you meant.</p>
+      <ul class="ticks reveal">
+        <li><b>Glide typing</b> with a live trail</li>
+        <li><b>Key correction</b> for off-centre taps</li>
+        <li><b>Learns your words</b>, on your phone only</li>
+        <li><b>Hold, swipe, slide</b>: accents, word delete, cursor</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Sinhala -->
+  <section class="panel" id="sinhala" data-stage="2">
+    <span class="bignum g-right" aria-hidden="true">02</span>
+    <div class="copy left">
+      <p class="eyebrow reveal">02 · සිංහල</p>
+      <h2 class="reveal">Sinhala, the way<br><span class="grad">you type it.</span></h2>
+      <p class="lede reveal">Type sounds in English letters and watch them turn into Sinhala, with the same rules as Helakuru. Or switch to the Wijesekara layout. English and Sinhala mix freely, word by word.</p>
+      <div class="typer reveal" aria-label="Singlish typing demo">
+        <div class="typer-row"><span class="tag">You type</span><span id="latin" class="latin"></span><span class="caret"></span></div>
+        <div class="typer-row out"><span class="tag">You get</span><span id="sinhalaOut" class="si"></span></div>
+      </div>
+      <div class="stats reveal">
+        <div><b data-count="25137">0</b><span>Sinhala words</span></div>
+        <div><b data-count="2">0</b><span>layouts</span></div>
+        <div><b data-count="106">0</b><span>rules checked</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Clipboard -->
+  <section class="panel" id="clipboard" data-stage="3">
+    <span class="bignum g-left" aria-hidden="true">03</span>
+    <div class="copy right">
+      <p class="eyebrow reveal">03 · Clipboard</p>
+      <h2 class="reveal">Copy. Capture.<br><span class="grad">Paste.</span></h2>
+      <p class="lede reveal">What you copy waits above the keys. A phone number inside it gets its own chip. Take a screenshot and it is one tap from the chat.</p>
+      <div class="phone reveal" aria-label="Clipboard chips demo">
+        <div class="chipbar">
+          <div class="chip c1"><span class="thumb"></span>Screenshot</div>
+          <div class="chip c2"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 16H5V5h2v3h10V5h2v14z"/></svg>call me on 0771…</div>
+          <div class="chip c3"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>0771234567</div>
+          <div class="chip c4"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62A7.95 7.95 0 0 1 12.5 10.5c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>Undo</div>
+        </div>
+        <div class="cards">
+          <div class="card img"></div>
+          <div class="card">call me on 0771234567 test</div>
+          <div class="card pin">Pinned · home address</div>
+          <div class="card">0771234567</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AI -->
+  <section class="panel" id="ai" data-stage="4">
+    <span class="bignum g-right" aria-hidden="true">04</span>
+    <div class="copy left">
+      <p class="eyebrow reveal">04 · AI tools</p>
+      <h2 class="reveal">AI that waits<br><span class="grad">until you ask.</span></h2>
+      <p class="lede reveal">Fix a message, change its tone, translate it or draft a reply, right from the keyboard. Bring your own Gemini, Groq, DeepSeek or Claude key. It stays on your phone.</p>
+      <div class="ai reveal" aria-label="AI tools demo">
+        <div class="tabs" id="aiTabs">
+          <button class="on" data-i="0">Fix mistakes</button>
+          <button data-i="1">Rewrite</button>
+          <button data-i="2">Translate</button>
+          <button data-i="3">Reply</button>
+        </div>
+        <div class="ai-box">
+          <p class="before" id="aiBefore"></p>
+          <div class="spark" aria-hidden="true">✦</div>
+          <p class="after" id="aiAfter"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Pinned horizontal gallery: the page holds while the cards slide sideways -->
+  <section class="panel hscroll" id="more" data-stage="5">
+    <div class="hpin">
+      <div class="hhead">
+        <p class="eyebrow">05 · And more</p>
+        <h2>Everything else,<br><span class="grad">in one row.</span></h2>
+      </div>
+      <div class="htrack" id="htrack">
+        <article class="hcard"><span class="hn">01</span><h3>Glide typing</h3><p>Slide across the letters and lift. A glowing trail shows your path, and the other guesses wait above the keys.</p></article>
+        <article class="hcard"><span class="hn">02</span><h3>Key correction</h3><p>A tap that lands between two keys picks the letter that makes a real word, like the big keyboards do.</p></article>
+        <article class="hcard"><span class="hn">03</span><h3>Emoji search</h3><p>Type "lol", "bday" or "hinaa". Typos are fine, and the emoji you use most come first.</p></article>
+        <article class="hcard"><span class="hn">04</span><h3>Text editing</h3><p>Arrows, Select, line start and end, Cut, Copy and Paste in one panel for fixing long messages.</p></article>
+        <article class="hcard"><span class="hn">05</span><h3>Undo chip</h3><p>Pasted the wrong thing or deleted too much? One chip brings it back.</p></article>
+        <article class="hcard"><span class="hn">06</span><h3>Learns you</h3><p>Your words, names and phrases, kept on the phone. Never in password boxes, cleared with one button.</p></article>
+        <article class="hcard"><span class="hn">07</span><h3>Your settings</h3><p>Number row, key pop-up, vibration strength, keyboard height, touch and hold time. Set it once.</p></article>
+        <article class="hcard"><span class="hn">08</span><h3>Four themes</h3><p>AMOLED black, Dark, Light and Violet, with keys that sink, glow and spring back.</p></article>
+      </div>
+      <div class="hbar"><i id="hbar"></i></div>
+    </div>
+  </section>
+
+  <!-- 7. Numbers -->
+  <section class="panel center" id="numbers" data-stage="6">
+    <div class="copy mid">
+      <p class="eyebrow reveal">06 · Small, private, yours</p>
+      <h2 class="reveal">Light on your phone.<br><span class="grad">Quiet about you.</span></h2>
+      <div class="grid4 reveal">
+        <div class="tile"><b><span data-count="576">0</span> KB</b><span>whole app</span></div>
+        <div class="tile"><b data-count="0" data-suffix="">0</b><span>ads or trackers</span></div>
+        <div class="tile"><b><span data-count="100">0</span>%</b><span>learning stays on device</span></div>
+        <div class="tile"><b><span data-count="4">0</span></b><span>AI providers, your key</span></div>
+      </div>
+      <p class="fine reveal">Nothing is learned in password boxes or private tabs, and one button clears everything it learned.</p>
+    </div>
+  </section>
+
+  <!-- 7. Download -->
+  <section class="panel center last" id="download" data-stage="7">
+    <div class="copy mid low">
+      <h2 class="reveal big">Ready when<br><span class="grad">you are.</span></h2>
+      <div class="cta reveal">
+        <a class="btn primary xl" href="https://github.com/damsarachethiyaa-dev/lumi-keys/releases/latest">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+          Download Lumi Keys 1.1
+        </a>
+      </div>
+      <p class="fine reveal">Open the APK on your phone, allow the install, then follow Setup in the app.</p>
+    </div>
+    <footer>
+      <span>&copy; 2026 Lumi Keys &middot; Free for Android</span>
+      <span>English words: FrequencyWords · Sinhala counts: Sinhala Wikipedia · CC BY-SA 4.0</span>
+    </footer>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
