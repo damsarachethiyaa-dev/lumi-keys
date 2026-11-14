@@ -30,7 +30,7 @@
   </p>
 
   <p>
-    <img src="media/readme-stats.svg" width="606" alt="576 KB app size, 25 thousand Sinhala words, latest release v1.1" />
+    <a href="https://github.com/damsarachethiyaa-dev/lumi-keys/releases"><img src="media/readme-stats.svg" width="606" alt="Total downloads, 25 thousand Sinhala words, latest release" /></a>
   </p>
 
   <br />
